@@ -25,7 +25,7 @@ const isShopActive = async (req, res, next) => {
       sessionHandler.storeSession(onlineSession);
 
       const webhookRegistrar = await shopify.webhooks.register({
-        sessoin: offlineSession,
+        session: offlineSession,
       });
 
       const isFreshInstall = await StoreModel.findOne({
@@ -42,7 +42,7 @@ const isShopActive = async (req, res, next) => {
     }
     next();
   } catch (e) {
-    console.log(`---> An error occured in isInitialLoad:, ${e.message}`, e);
+    console.log(`---> An error occured in isInitialLoad`, e);
     return res.status(403).send({ error: true });
   }
 };

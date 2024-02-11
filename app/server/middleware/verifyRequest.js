@@ -1,6 +1,7 @@
 import sessionHandler from "../../utils/sessionHandler.js";
 import shopify from "../../utils/shopify.js";
 import validateJWT from "../../utils/validateJWT.js";
+import { RequestedTokenType, Session } from "@shopify/shopify-api";
 
 const verifyRequest = async (req, res, next) => {
   try {
