@@ -13,7 +13,8 @@ import { ensureAuthenticatedPartners } from "@shopify/cli-kit/node/session";
 import { renderSelectPrompt } from "@shopify/cli-kit/node/ui";
 import "dotenv/config";
 
-const UpdateAppURLQuery = ` mutation appUpdate($apiKey: String!, $applicationUrl: Url!, $redirectUrlWhitelist: [Url]!) {
+const UpdateAppURLQuery = `
+  mutation appUpdate($apiKey: String!, $applicationUrl: Url!, $redirectUrlWhitelist: [Url]!) {
     appUpdate(input: {apiKey: $apiKey, applicationUrl: $applicationUrl, redirectUrlWhitelist: $redirectUrlWhitelist}) {
       userErrors {
         message
@@ -22,7 +23,8 @@ const UpdateAppURLQuery = ` mutation appUpdate($apiKey: String!, $applicationUrl
     }
   }`;
 
-const FindAppQuery = `query FindApp($apiKey: String!) {
+const FindAppQuery = `
+  query FindApp($apiKey: String!) {
     app(apiKey: $apiKey) {
       id
       title
@@ -109,7 +111,7 @@ const updateDashboardURLs = async (apiKey, appUrl) => {
       .map((error) => error.message)
       .join(", ");
 
-    throw new AbortError(errors);
+    throw new Error(errors);
   }
 };
 

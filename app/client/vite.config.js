@@ -4,8 +4,9 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
 
-const PORT = process.env.PORT || 8081;
-const VitePort = 5173;
+const isDev = process.env.NODE_ENV === "dev";
+const PORT = isDev ? 5173 : process.env.PORT || 8081;
+const VitePort = process.env.PORT || 8081;
 
 const proxyOptions = {
   target: `http://127.0.0.1:${PORT}`,
@@ -18,6 +19,8 @@ const host = process.env.SHOPIFY_APP_URL
   ? process.env.SHOPIFY_APP_URL.replace(/https?:\/\//, "")
   : "localhost";
 let hmrConfig;
+
+console.log({ host });
 
 if (host === "localhost") {
   hmrConfig = {

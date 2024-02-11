@@ -1,0 +1,24 @@
+{
+  "name": "extension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pretty": "prettier --write ./",
+    "-----> Shopify <-----": "",
+    "g:install": "npm i -g @shopify/app@latest @shopify/cli@latest",
+    "shopify": "shopify",
+    "build": "cd ..; shopify app build",
+    "dev": "cd ..; shopify app dev",
+    "info": "cd ..; shopify app info",
+    "generate": "cd ..; shopify app generate extension",
+    "deploy": "cd ..; shopify app deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@shopify/ui-extensions": "2024.1.1",
+    "react": "^18.2.0"
+  }
+}

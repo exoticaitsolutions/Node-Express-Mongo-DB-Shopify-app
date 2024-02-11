@@ -1,0 +1,4 @@
+# cd into `app/`
+# fill out your .env
+# run `npm run update:config` to generate your `shopify.app.toml`
+# Do not create a `shopify.app.toml` file manually

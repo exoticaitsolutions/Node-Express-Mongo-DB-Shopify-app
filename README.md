@@ -1,3 +1,8 @@
+# This is my dev backup for managed installation
+# DO NOT USE THIS IN PRODUCTION
+
+---
+
 # Shopify Node.js x Express.js x React.js Boilerplate
 
 An embedded app starter template to get up and ready with Shopify app development with JavaScript. This is heavily influenced by the choices Shopify Engineering team made in building their [starter template](https://github.com/Shopify/shopify-app-template-node) to ensure smooth transition between templates.
